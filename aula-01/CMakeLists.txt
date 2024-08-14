@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.25)
+project(aula-01)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../cmake)
+
+include(SyncSubmodules)
+
+option(PACKAGE_TESTS "Build the tests" ON)
+if(PACKAGE_TESTS)
+    enable_testing()
+    include(AddGoogleTest)
+    add_subdirectory(tests)
+endif()
+
+include(AddGLFW)
+
+add_subdirectory("src")
