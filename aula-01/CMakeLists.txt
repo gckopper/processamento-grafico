@@ -4,7 +4,7 @@ project(aula-01)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../cmake)
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 include(SyncSubmodules)
 
@@ -15,6 +15,7 @@ if(PACKAGE_TESTS)
     add_subdirectory(tests)
 endif()
 
+include(AddGlad)
 include(AddGLFW)
 
 add_subdirectory("src")
