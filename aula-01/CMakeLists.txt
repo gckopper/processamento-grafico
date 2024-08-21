@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.25)
-project(aula-01)
 
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/../cmake)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/../cmake)
 
 option(CROSS_COMPILE "Cross compile to Windows" OFF)
 if(CROSS_COMPILE)
     include(CrossCompile)
 endif()
+
+project(aula-01)
+
 include(SetDefaultBuild)
 
 set(CMAKE_CXX_STANDARD 20)
