@@ -17,4 +17,4 @@ if(NOT EXISTS "${PROJECT_SOURCE_DIR}/../extern/glfw/CMakeLists.txt")
     endif()
 endif()
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/../extern/glfw ${PROJECT_SOURCE_DIR}/../extern/glfw/build)
+add_subdirectory(${PROJECT_SOURCE_DIR}/../extern/glfw ${CMAKE_BINARY_DIR}/glfw)

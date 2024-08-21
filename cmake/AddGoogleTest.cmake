@@ -19,4 +19,4 @@ endif()
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/../extern/googletest ${PROJECT_SOURCE_DIR}/../extern/googletest/build)
+add_subdirectory(${PROJECT_SOURCE_DIR}/../extern/googletest ${CMAKE_BINARY_DIR}/googletest)
