@@ -1,2 +1,2 @@
-add_executable(main Source.cpp)
-target_link_libraries(main PUBLIC glfw glad)
+add_executable(triangles triangles.cpp)
+target_link_libraries(triangles PUBLIC glfw glad)
