@@ -15,24 +15,40 @@ sistemas GNU/Linux.
 
 Primeiramente clone este repositório:
 
-`git clone https://github.com/gckopper/processamento-grafico`
+```
+git clone https://github.com/gckopper/processamento-grafico
+```
 
 Entre no diretorio do exercício desejado, por exemplo, `aula-01` usando o comando `cd`:
 
-`cd aula-01`
+```
+cd aula-01
+```
 
 Inicialize o cmake utilizando o comando abaixo junto de flags opcionais:
 
 <details><summary>Compilar testes (opcional)</summary>
 Ignore o comando abaixo e use:
-`cmake -S . -B build -DPACKAGE_TESTS=ON`
+```
+cmake -S . -B build -DPACKAGE_TESTS=ON
+```
 </details>
 
-`cmake -S . -B build`
+```
+cmake -S . -B build
+```
 
-Feito isso, basta compilar o projeto utilizando o comando `cmake --build build`
-e aguardar. A primeira compilação é um pouco mais demorada, pois compilamos a
-GLFW na hora. Esta compilação ocorre apenas uma vez sendo reutilizada em builds
-subsequentes do mesmo projeto. A compilação da GLFW permite que o mesmo projeto
-seja utilizado para múltiplos sistemas operacionais e arquiteturas sem que seja
+Feito isso, basta compilar o projeto utilizando o comando:
+
+```
+cmake --build build
+```
+
+A primeira compilação é um pouco mais demorada, pois compilamos a GLFW na hora.
+Esta compilação ocorre apenas uma vez sendo reutilizada em builds subsequentes
+do mesmo projeto. A compilação da GLFW permite que o mesmo projeto seja
+utilizado para múltiplos sistemas operacionais e arquiteturas sem que seja
 necessário redistribuir binários para todos os possíveis alvos.
+
+Os binários estarão na pasta `build/src/` em todos os sistemas menos no Windows
+usando o MSVC. Neste caso elas estarão em `build/src/Debug/`.
