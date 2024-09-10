@@ -15,6 +15,16 @@ As primitivas gráficas indicam para o OpenGL como desenhar nossos vértices.
 Os vértices são, inicialmente, armazenados em buffers chamados *Vertex Buffer
 Objects* e depois eles vão para a GPU.
 
+## 3. Explicando VBOs, VAOs e EBOs
+
+- VBO (Vertex Buffer Object):
+
+- VAO (Vertex Array Object):
+
+- EBO (Element Buffer Object):
+
+## 4. sem entrega
+
 ## 5. Desenhando triângulos
 
 ![](images/cinco.png)
