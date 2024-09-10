@@ -19,16 +19,15 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -O0 -g -fsanitize=address")
 endif()
 
-option(PACKAGE_TESTS "Build the tests" OFF)
-if(PACKAGE_TESTS)
-    enable_testing()
-    include(AddGoogleTest)
-    add_subdirectory(tests)
-endif()
+include_directories("lib/")
 
 include(AddGlad)
 include(AddGLFW)
 
-include_directories("lib/")
 add_subdirectory("lib")
 add_subdirectory("src")
+
+option(PACKAGE_TESTS "Build the tests" OFF)
+if(PACKAGE_TESTS)
+    include(AddGoogleTest)
+endif()

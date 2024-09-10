@@ -31,6 +31,15 @@ namespace twod {
     bool Vertex::operator==(const Vertex &other) {
         return this->x == other.x && this->y == other.y;
     }
+    float Vertex::getX() {
+        return this->x;
+    }
+    float Vertex::getY() {
+        return this->y;
+    }
+    bool operator==(Vertex a, Vertex b) {
+        return a.getX() == b.getX();
+    }
     Vertex Vertex::operator+(const Vertex &other) {
         return Vertex(this->x+other.x, this->y+other.y);
     }
