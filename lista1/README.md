@@ -12,5 +12,19 @@ define a cor de cada um dos fragmentos.
 
 As primitivas gráficas indicam para o OpenGL como desenhar nossos vértices.
 
-Os vértices são armazenados, inicialmente, em buffers chamados Vertex Buffer
-Objects e depois passados para um Vertex Array Object (VAO).
+Os vértices são, inicialmente, armazenados em buffers chamados *Vertex Buffer
+Objects* e depois eles vão para a GPU.
+
+## 5. Desenhando triângulos
+
+![](images/cinco.png)
+
+## 6. Círculos, estrelas e pizza
+
+![](images/seis.png)
+
+## 7. Espiral
+
+## 8. Triangulo tri
+
+## 9. Papel
