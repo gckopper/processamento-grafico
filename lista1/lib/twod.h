@@ -24,4 +24,5 @@ namespace twod {
     std::vector<Vertex> make_convex_regular_polygon(uint32_t num_vert, float radius, Vertex middle);
     std::vector<Vertex> make_star_regular_polygon(uint32_t num_vert, float small_radius, float big_radius, Vertex middle);
     std::vector<Vertex> make_regular_polygon(uint32_t num_vert, float angle, float small_radius, float big_radius, Vertex middle);
+    std::vector<Vertex> make_spiral(float radius, float decay, Vertex middle);
 }

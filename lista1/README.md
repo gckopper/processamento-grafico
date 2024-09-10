@@ -25,6 +25,8 @@ Objects* e depois eles vão para a GPU.
 
 ## 7. Espiral
 
+![](images/sete.png)
+
 ## 8. Triangulo tri
 
 ## 9. Papel

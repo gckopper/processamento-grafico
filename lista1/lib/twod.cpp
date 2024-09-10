@@ -65,4 +65,15 @@ namespace twod {
         }
         return result;
     }
+    std::vector<Vertex> make_spiral(float radius, float decay, Vertex middle) {
+        std::vector<Vertex> result;
+        const uint32_t dots = radius/decay * 72.0f;
+        result.reserve(dots);
+        for (uint32_t i = 0; i < dots; ++i) {
+            Vertex dot = middle;
+            dot.move(radius-(i*decay/72.0f), 5*i);
+            result.push_back(dot);
+        }
+        return result;
+    }
 }
