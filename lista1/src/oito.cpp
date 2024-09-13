@@ -1,28 +1,31 @@
-#include <array>
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
-
+#include <string> 
 #include <vaoBuilder.h>
-#include <twod.h>
 
 #include <iostream>
 
 const GLchar* vertexShaderSource = R"v(
 #version 330 core
 layout (location = 0) in vec2 position;
+layout (location = 1) in vec3 color;
+out vec3 vcolor;
 void main() {
     // 2D only
     gl_Position = vec4(position.xy, 1.0, 1.0);
+    vcolor = color;
 };
 )v";
 
 const GLchar* fragmentShaderSource = R"f(
 #version 330 core
+in vec3 vcolor;
 out vec4 color;
 void main() {
-    color = vec4(0.8, 0.0, 0.3, 1.0);
+    color = vec4(vcolor.xyz, 1.0);
 };
 )f";
+
 GLuint setupShader()
 {
 	// Vertex shader
@@ -89,8 +92,11 @@ int main() {
 	glViewport(0, 0, width, height);
 
     GLuint shader = setupShader();
-    VAOBuilder vao_builder;
-    vao_builder.addVertexArray({{0.0, 0.6}, {-0.59, -0.49}, {0.6, 0.3}});
+    VAOBuilder vao_builder(shader);
+    std::vector<GLfloat> vertex = {0.0, 0.6, -0.59, -0.49, 0.6, -0.3};
+    std::vector<GLfloat> colors = {1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0};
+    vao_builder.addData<GLfloat>("position", vertex);
+    vao_builder.addData<GLfloat>("color", colors);
     GLuint vao = vao_builder.build();
 
 	glUseProgram(shader);
@@ -117,4 +123,3 @@ int main() {
 	glfwTerminate();
 	return 0;
 }
-
