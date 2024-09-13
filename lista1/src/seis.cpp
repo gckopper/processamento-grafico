@@ -2,7 +2,7 @@
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
 
-#include <vaoBuilder.h>
+#include <simpleTwodVaoBuilder.h>
 #include <twod.h>
 
 #include <iostream>
@@ -89,7 +89,7 @@ int main() {
 	glViewport(0, 0, width, height);
 
     GLuint shader = setupShader();
-    VAOBuilder vao_builder;
+    SimpleTwodVAOBuilder vao_builder;
     twod::Vertex middle(0.0f, 0.0f);
     middle.move(0.5, 0);
     constexpr int polygon_count = 6;
