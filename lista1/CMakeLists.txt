@@ -16,16 +16,22 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-    SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Og -g -fsanitize=address")
+    SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Og -g -pedantic")
 endif()
 
 include_directories("lib/")
+include_directories("${CMAKE_BINARY_DIR}/generated_headers/")
 
 include(AddGlad)
 include(AddGLFW)
 
 add_subdirectory("lib")
 add_subdirectory("src")
+
+option(ASAN "Enable address sanitizer" OFF)
+if(ASAN)
+    SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fsanitize=address")
+endif()
 
 option(PACKAGE_TESTS "Build the tests" OFF)
 if(PACKAGE_TESTS)

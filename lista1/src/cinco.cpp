@@ -19,7 +19,7 @@ GLuint setupTriangleGeometry(triangle tri, std::vector<float> rot)
 
     std::vector<GLfloat> vertices(9*rot.size());
 
-    for (int i = 0; i < rot.size(); ++i) {
+    for (uint64_t i = 0; i < rot.size(); ++i) {
         const float co = std::cos(rot[i]);
         const float si = std::sin(rot[i]);
         for (int j = 0; j < 3; ++j) {
