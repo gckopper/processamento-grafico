@@ -138,6 +138,7 @@ class VAOBuilder {
         template<typename T>
         void addData(const std::string &var_name, const std::vector<T> &arr) {
             static_assert(std::is_same<GLfloat, T>::value
+                    || std::is_same<twod::Vertex, T>::value
                     || std::is_same<GLdouble, T>::value
                     || std::is_same<GLuint, T>::value
                     || std::is_same<GLint, T>::value,
@@ -150,6 +151,7 @@ class VAOBuilder {
             }
             GLenum primi = glprimitive_decay(elem->second.primitive);
             if ((std::is_same<GLfloat, T>::value && GL_FLOAT != primi)
+                    || (std::is_same<twod::Vertex, T>::value && GL_FLOAT != primi)
                     || (std::is_same<GLdouble, T>::value && GL_DOUBLE != primi)
                     || (std::is_same<GLuint, T>::value && GL_UNSIGNED_INT != primi)
                     || (std::is_same<GLint, T>::value && GL_INT != primi)) {
