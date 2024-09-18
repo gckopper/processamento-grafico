@@ -47,6 +47,13 @@ namespace twod {
     std::vector<Vertex> make_convex_regular_polygon(uint32_t num_vert, float radius, Vertex middle) {
         return make_star_regular_polygon(num_vert, radius, radius, middle);
     }
+    std::vector<Vertex> make_elipse(uint32_t num_vert, float radius, float ratioX, float ratioY, Vertex middle) {
+        std::vector<Vertex> result = make_convex_regular_polygon(num_vert, radius, middle);
+        for (uint32_t i = 0; i < result.size(); ++i) {
+            result[i].add(result[i].getX()*(ratioX-1), result[i].getY()*(ratioY-1));
+        }
+        return result;
+    }
     std::vector<Vertex> make_star_regular_polygon(uint32_t num_vert, float small_radius, float big_radius, Vertex middle) {
         const float angle = 360.0f / num_vert;
         return make_regular_polygon(num_vert, angle, small_radius, big_radius, middle);
