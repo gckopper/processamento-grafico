@@ -19,9 +19,19 @@ Objects* e depois eles vão para a GPU.
 
 - VBO (Vertex Buffer Object):
 
+Vertex Buffer Objects guardam os dados que usamos para desenhar os vértices.
+Nos exercícios, usamos VBOs para guardar as coordenadas dos vértices e suas
+cores. Esses buffers vivem na memória da GPU para serem acessados durante
+o processamento dos shaders.
+
 - VAO (Vertex Array Object):
 
+Usamos o VAOs para indicar como os dados do VBO se relacionam com os atributos
+de um shader. O VAO também guarda a informação de qual o EBO que está em uso.
+
 - EBO (Element Buffer Object):
+
+O EBO é usado para guardar os índices do VBO que serão usados por cada vértice.
 
 ## 4. sem entrega
 
