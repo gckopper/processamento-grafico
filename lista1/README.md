@@ -46,5 +46,17 @@ Objects* e depois eles vão para a GPU.
 ## 8. Triangulo tri
 
 [Fonte](src/oito.cpp)
+![](images/oito.png)
 
 ## 9. Papel
+
+[Fonte](src/nove.cpp)
+[Projeto do Excalidraw](images/nove.excalidraw)
+
+### Ideia
+
+![](images/nove-draw.png)
+
+### Resultado
+
+![](images/nove.png)
