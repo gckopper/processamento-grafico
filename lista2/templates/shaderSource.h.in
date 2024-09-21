@@ -1,0 +1,3 @@
+#include <string>
+
+const std::string @SHADER_NAME@ = R"(@FILE_CONTENT@)";

@@ -1,0 +1,5 @@
+function(add_shader SHADER_NAME TEMPLATE SHADER GENERATED_HEADER)
+    message("${CMAKE_SOURCE_DIR}/shaders/${SHADER}")
+    file(GLOB FILE_CONTENT "${CMAKE_SOURCE_DIR}/shaders/${SHADER}")
+    configure_file("${CMAKE_SOURCE_DIR}/templates/${TEMPLATE}" "${CMAKE_BINARY_DIR}/generated_headers/${GENERATED_HEADER}" @ONLY)
+endfunction()
