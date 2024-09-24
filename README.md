@@ -9,7 +9,7 @@ para compilar os códigos e testes.
 <details><summary>Setup com o Mingw64 e ou Msys2</summary>
 Para compilar os projetos em um ambiente Mingw64 ou Msys2 recomenda-se o uso do
 pacote `mingw-w64-ucrt-x86_64-cmake` e de um compilador de C e C++ compativel com
-o ambiente ucrt. Com as ferramentas em mão o processo é identico a compilação em
+o ambiente ucrt. Com as ferramentas em mãos, o processo é identico a compilação em
 sistemas GNU/Linux.
 </details>
 
