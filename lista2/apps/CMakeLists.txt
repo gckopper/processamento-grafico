@@ -6,6 +6,9 @@ target_link_libraries(um PUBLIC glfw glad vaoBuilder shader glm)
 add_executable(dois dois.cpp)
 target_link_libraries(dois PUBLIC glfw glad vaoBuilder shader glm)
 
+add_executable(tres tres.cpp)
+target_link_libraries(tres PUBLIC glfw glad vaoBuilder shader glm)
+
 add_executable(quatro quatro.cpp)
 target_link_libraries(quatro PUBLIC glfw glad vaoBuilder shader glm)
 

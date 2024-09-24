@@ -23,8 +23,11 @@ no espelhamento horizontal da imagem.
 
 Tal configuração pode ser útil, pois assim podemos visualizar o que vamos
 desenhar já que as coordenadas mapeiam diretamente para pixels. O espelhamento
-horizontal pode ser usado para criar um espelho usando uma câmera dentro do
-espelho e um estêncil como espelho.
+horizontal deixará a imagem de cabeça para baixo.
+
+[Fonte](src/tres.cpp)
+
+![](images/tres.png)
 
 ## 4. viewport no primeiro quadrante
 
