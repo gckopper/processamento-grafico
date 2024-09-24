@@ -22,7 +22,7 @@ int main() {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Criação da janela GLFW
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Gabriel Kopper - Exercicio dois - Lista 2", nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Gabriel Kopper - Exercicio cinco - Lista 2", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
     if (gladLoadGL(glfwGetProcAddress) == 0) {
         std::cout << "Failed to initialize OpenGL context" << std::endl;
@@ -30,7 +30,6 @@ int main() {
     }
     int width, height;
     glfwGetFramebufferSize(window, &width, &height);
-	glViewport(0, 0, width, height);
 
     Shader shader(VERT_SHADER, FRAG_SHADER);
     std::optional<GLuint> shaderId = shader.compile();
@@ -43,7 +42,7 @@ int main() {
     vao_builder.addData<float>("position", vertexes);
     GLuint vao = vao_builder.build();
 
-    glm::mat4 projection = glm::ortho(0.0f,800.0f,0.0f,600.0f,-1.0f,1.0f);
+    glm::mat4 projection = glm::ortho(-1.0f,1.0f,-1.0f,1.0f,-1.0f,1.0f);
 
 	glUseProgram(shaderId.value());
 
@@ -52,12 +51,15 @@ int main() {
     while (!glfwWindowShouldClose(window)) {
         glfwPollEvents();
 
-        glClearColor(0.f, 0.f, 0.f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
         glClear(GL_COLOR_BUFFER_BIT);
 
 		glBindVertexArray(vao); //Conectando ao buffer de geometria
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        for (uint8_t i = 0; i < 4; ++i) {
+            glViewport(width/2 * (i>>1), height/2 * (i&1), width/2, height/2);
+            glDrawArrays(GL_TRIANGLES, 0, 3);
+        }
 		glBindVertexArray(0); //Desconectando o buffer de geometria
 
 		// Troca os buffers da tela
