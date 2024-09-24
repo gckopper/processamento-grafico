@@ -43,7 +43,7 @@ int main() {
     vao_builder.addData<float>("position", vertexes);
     GLuint vao = vao_builder.build();
 
-    glm::mat4 projection = glm::ortho(0.0f,800.0f,0.0f,600.0f,-1.0f,1.0f);
+    glm::mat4 projection = glm::ortho(0.0f,800.0f,600.0f,0.0f,-1.0f,1.0f);
 
 	glUseProgram(shaderId.value());
 
