@@ -50,5 +50,9 @@ do mesmo projeto. A compilação da GLFW permite que o mesmo projeto seja
 utilizado para múltiplos sistemas operacionais e arquiteturas sem que seja
 necessário redistribuir binários para todos os possíveis alvos.
 
-Os binários estarão na pasta `build/src/` em todos os sistemas menos no Windows
-usando o MSVC. Neste caso elas estarão em `build/src/Debug/`.
+Os binários estarão na pasta `build/src/` em todos os alvos menos no Windows
+usando o MSVC para a `aula-01` e `lista1`. Neste caso elas estarão em
+`build/src/Debug/`.
+
+Da `lista2` em diante, os binários ficam em `build/apps/<número do exercício>` ou
+`build/apps/Debug/<número do exercício>` usando o MSVC.
